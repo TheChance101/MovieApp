@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.karrar.movieapp.ui.base.BaseViewModel" />
+
+        <variable
+            name="listener"
+            type="com.karrar.movieapp.ui.profile.watchhistory.WatchHistoryInteractionListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_circle_background"
+            android:contentDescription="@string/no_history_yet"
+            android:padding="18dp"
+            android:src="@drawable/ic_history_colored"
+            app:layout_constraintBottom_toTopOf="@+id/title"
+            app:layout_constraintEnd_toEndOf="@+id/title"
+            app:layout_constraintStart_toStartOf="@+id/title"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:tint="@color/brand_primary" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/Medium.TextTitleSM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:text="@string/no_history_yet"
+            android:textColor="@color/shade_primary"
+            app:layout_constraintBottom_toTopOf="@+id/empty_description"
+            app:layout_constraintEnd_toEndOf="@+id/empty_description"
+            app:layout_constraintStart_toStartOf="@+id/empty_description"
+            app:layout_constraintTop_toBottomOf="@+id/no_data" />
+
+        <TextView
+            android:id="@+id/empty_description"
+            style="@style/Medium.TextBodySM"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:gravity="center"
+            android:text="@string/no_history_description"
+            android:textColor="@color/shade_secondary"
+            app:layout_constraintBottom_toTopOf="@+id/button_action"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <Button
+            android:id="@+id/button_action"
+            style="@style/SquircleButton.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:onClick="@{() -> listener.onClickExplore()}"
+            android:paddingHorizontal="16dp"
+            android:text="@string/watch_something"
+            android:textSize="@dimen/text_size_body_sm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/empty_description"
+            app:layout_constraintStart_toStartOf="@+id/empty_description"
+            app:layout_constraintTop_toBottomOf="@+id/empty_description" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -49,7 +49,7 @@
             android:layout_marginTop="@dimen/spacing_medium"
             android:gravity="center"
             android:text="@string/description"
-            android:textColor="@color/brand_color"
+            android:textColor="@color/brand_primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title_lost_connection" />

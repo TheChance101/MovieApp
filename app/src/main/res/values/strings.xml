@@ -66,7 +66,7 @@
     <string name="submit_toast">Submitted, Thank you for your feedback</string>
     <string name="total_episodes">%1$s Episodes</string>
     <string name="m">%1$s m</string>
-    <string name="watch_history">Watch History</string>
+    <string name="watch_history">History</string>
     <string name="rated_movies">My Ratings</string>
     <string name="sign_out">Sign Out</string>
     <string name="at">\@</string>
@@ -102,4 +102,12 @@
     <string name="this_list_has_no_lists">No lists found</string>
     <string name="episode_title">%1$d. %2$s</string>
     <string name="season_number">(%1$s Seasons)</string>
+    <string name="no_history_yet">No History Yet</string>
+    <string name="no_history_description">It’s quiet in here… Start watching and we’ll keep track for you.</string>
+    <string name="watch_something">Find Something to Watch</string>
+    <string name="enter_your_email_or_username">Enter your email or username</string>
+    <string name="welcome_back_to_cineverse">Welcome back to CineVerse!</string>
+    <string name="create_a_new_account">Create a New Account</string>
+    <string name="forgot_password"><u>Forgot Password?</u></string>
+    <string name="join_as_guest">Join as Guest</string>
 </resources>

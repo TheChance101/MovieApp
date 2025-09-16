@@ -30,9 +30,16 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
             is LoginUIEvent.LoginEvent -> {
                 findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToProfileFragment())
             }
+
             LoginUIEvent.SignUpEvent -> {
                 val browserIntent =
                     Intent(Intent.ACTION_VIEW, Uri.parse(BuildConfig.TMDB_SIGNUP_URL))
+                startActivity(browserIntent)
+            }
+
+            LoginUIEvent.ForgetPasswordEvent -> {
+                val browserIntent =
+                    Intent(Intent.ACTION_VIEW, Uri.parse(BuildConfig.TMDB_FORGET_PASSWORD_URL))
                 startActivity(browserIntent)
             }
         }

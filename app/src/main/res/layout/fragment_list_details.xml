@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-64dp"
             android:text="@string/empty"
-            android:textColor="@color/brand_color"
+            android:textColor="@color/brand_primary"
             app:layout_constraintEnd_toEndOf="@+id/no_data"
             app:layout_constraintStart_toStartOf="@+id/no_data"
             app:layout_constraintTop_toBottomOf="@+id/no_data" />
@@ -119,7 +119,7 @@
             android:layout_marginTop="@dimen/spacing_medium"
             android:gravity="center"
             android:text="@string/description"
-            android:textColor="@color/brand_color"
+            android:textColor="@color/brand_primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title_lost_connection" />

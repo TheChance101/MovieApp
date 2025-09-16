@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="@string/title_celebrity"
             tools:text="Celebrities"
-            android:textColor="@color/shade_primary_color"
+            android:textColor="@color/shade_primary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,7 +40,7 @@
             android:layout_marginEnd="@dimen/spacing_too_small"
             android:onClick="@{() -> listener.onClickSeeAllActors()}"
             android:text="@string/see_all"
-            android:textColor="@color/brand_color"
+            android:textColor="@color/brand_primary"
             app:drawableEndCompat="@drawable/ic_arrow_right"
             app:layout_constraintBaseline_toBaselineOf="@+id/text_celebrities"
             app:layout_constraintEnd_toEndOf="parent" />

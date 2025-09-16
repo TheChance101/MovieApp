@@ -33,7 +33,7 @@
             android:layout_marginStart="@dimen/spacing_medium"
             android:layout_marginTop="@dimen/spacing_medium"
             android:text="@string/title_airing_today"
-            android:textColor="@color/shade_primary_color"
+            android:textColor="@color/shade_primary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,7 +45,7 @@
             tools:text="20 Movies"
             android:layout_marginEnd="@dimen/spacing_medium"
             android:text="@{@string/text_movies(count.toString())}"
-            android:textColor="@color/shade_ternary_color"
+            android:textColor="@color/shade_tertiary"
             app:layout_constraintBaseline_toBaselineOf="@+id/text_airing_today"
             app:layout_constraintEnd_toEndOf="@id/recycler_airing_movies" />
 

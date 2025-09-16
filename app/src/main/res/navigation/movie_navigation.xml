@@ -253,7 +253,11 @@
     <fragment
         android:id="@+id/watchHistoryFragment"
         android:name="com.karrar.movieapp.ui.profile.watchhistory.WatchHistoryFragment"
-        tools:layout="@layout/fragment_watch_history">
+        tools:layout="@layout/empty_history_item">
+        <action
+            android:id="@+id/action_watchHistoryFragment_to_exploringFragment"
+            app:destination="@id/exploringFragment"
+            />
         <action
             android:id="@+id/action_watchHistoryFragment_to_movieDetailFragment"
             app:destination="@id/movieDetailFragment" />
@@ -298,6 +302,9 @@
         tools:layout="@layout/fragment_episodes">
         <argument
             android:name="tvShowId"
+            app:argType="integer" />
+        <argument
+            android:name="seasonId"
             app:argType="integer" />
     </fragment>
 

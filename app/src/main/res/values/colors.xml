@@ -1,27 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <color name="brand_color">#E82627</color>
     <color name="background_color">#FFFFFF</color>
-
-
-    <color name="card_background_color">#F3F5F6</color>
     <color name="text_field_background_color">#E8EBEE</color>
     <color name="slider_gradiant_end_color">#9903050A</color>
-
-    <color name="shade_primary_color">#DF03050A</color>
-    <color name="shade_secondary_color">#9903050A</color>
-    <color name="shade_ternary_color">#6103050A</color>
-    <color name="shade_quaternary_color">#2903050A</color>
-
-    <color name="yellow">#FDB92C</color>
-    <color name="colorDisabled">#66E82627</color>
-
-
     <color name="white_primary">#FFFFFF</color>
     <color name="white_secondary">#99FFFFFF</color>
     <color name="gray">#33737373</color>
 
-    <color name="profile_background">#9903050A</color>
+    <!-- New Design System-->
+    <color name="background_screen">#F7F7F7</color>
+    <color name="background_card">#FFFFFF</color>
+    <color name="background_bottom_sheet">#FFFFFF</color>
+    <color name="background_bottom_sheet_card">#F6F6F6</color>
+    <color name="background_bottom_sheet_container">#12121299</color>
+
+    <color name="shade_primary">#313131</color>
+    <color name="shade_secondary">#717171</color>
+    <color name="shade_tertiary">#A5A5A5</color>
+    <color name="shade_quaternary">#ECECEC</color>
+    <color name="shade_quinary">#F6F6F6</color>
+
+    <color name="brand_primary">#536DFE</color>
+    <color name="brand_secondary">#BEC8FF</color>
+    <color name="brand_tertiary">#F1F3FF</color>
+
+    <color name="button_primary">#536DFE</color>
+    <color name="button_secondary">#F1F3FF</color>
+    <color name="button_disabled">#E5E5E5</color>
+    <color name="button_on_primary">#FFFFFF</color>
+    <color name="button_on_secondary">#313131</color>
+    <color name="button_on_disabled">#A5A5A5</color>
+    <color name="button_on_tertiary">#536DFE</color>
+
+    <color name="stroke_primary">#ECECEC</color>
+
+    <!-- Stroke Glow-->
+    <color name="stroke_glow_start">#3D8C9EFF</color>
+    <color name="stroke_glow_center">#FF8C9EFF</color>
+    <color name="stroke_glow_end">#388C9EFF</color>
+
+    <!-- Overlay -->
+    <color name="overlay_primary">#99FFFFFF</color> <!-- 60% alpha -->
+    <color name="overlay_secondary">#3DFFFFFF</color> <!-- 24% alpha -->
+
+    <color name="additional_primary_red">#EF4444</color>
+    <color name="additional_primary_green">#22C55E</color>
+    <color name="additional_primary_yellow">#FACC15</color>
+
+    <color name="additional_secondary_red">#FBEEEE</color>
+    <color name="additional_secondary_green">#EEF5EF</color>
+    <color name="additional_secondary_yellow">#FFFAEB</color>
 
 </resources>

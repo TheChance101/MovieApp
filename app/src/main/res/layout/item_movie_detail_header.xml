@@ -27,7 +27,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:posterImage="@{item.image}"
+            app:mediaPoster="@{item.image}"
             tools:src="@drawable/image" />
 
         <View
@@ -123,7 +123,7 @@
             android:layout_width="1dp"
             android:layout_height="16dp"
             android:layout_marginTop="@dimen/spacing_medium"
-            android:background="@color/shade_ternary_color"
+            android:background="@color/shade_tertiary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -152,7 +152,7 @@
             android:layout_marginTop="@dimen/spacing_small"
             android:gravity="center"
             android:text="@{item.genres}"
-            android:textColor="@color/brand_color"
+            android:textColor="@color/brand_primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/line"
@@ -178,7 +178,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/spacing_medium"
             android:text="@{item.voteAverage}"
-            android:textColor="@color/yellow"
+            android:textColor="@color/additional_primary_yellow"
             app:layout_constraintBottom_toBottomOf="@+id/review"
             app:layout_constraintEnd_toStartOf="@+id/review"
             app:layout_constraintHorizontal_bias="0.5"

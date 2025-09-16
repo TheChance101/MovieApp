@@ -30,7 +30,7 @@
             app:layout_constraintBottom_toBottomOf="@id/input_search"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/input_search"
-            app:tint="@color/shade_primary_color" />
+            app:tint="@color/shade_primary" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_search"
@@ -52,11 +52,11 @@
             android:paddingStart="@dimen/spacing_small"
             android:paddingEnd="@dimen/spacing_small"
             android:text="@{viewModel.uiState.searchInput}"
-            android:textColor="@color/shade_primary_color"
-            android:textColorHint="@color/shade_ternary_color"
+            android:textColor="@color/shade_primary"
+            android:textColorHint="@color/shade_tertiary"
             android:textCursorDrawable="@drawable/color_cursor"
             android:transitionName="search_box"
-            app:drawableTint="@color/brand_color"
+            app:drawableTint="@color/brand_primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/imagw_back_arrow"
             app:layout_constraintTop_toTopOf="parent">
@@ -127,8 +127,8 @@
             android:drawablePadding="@dimen/spacing_small"
             android:gravity="center"
             android:text="@string/history_label"
-            android:textColor="@color/shade_primary_color"
-            app:drawableStartCompat="@drawable/ic_history"
+            android:textColor="@color/shade_primary"
+            app:drawableStartCompat="@drawable/ic_history_due_tone"
             app:hideWhenListIsEmpty="@{viewModel.uiState.searchHistory}"
             app:hideWhenSearch="@{viewModel.uiState.searchInput}"
             app:layout_constraintStart_toStartOf="@id/imagw_back_arrow"

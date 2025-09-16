@@ -35,13 +35,17 @@ class WatchHistoryFragment : BaseFragment<FragmentWatchHistoryBinding>() {
                     event.movieID
                 )
             }
+
             is WatchHistoryUIEvent.TVShowEvent -> {
                 WatchHistoryFragmentDirections.actionWatchHistoryFragmentToTvShowDetailsFragment(
                     event.tvShowID
                 )
             }
+
+            is WatchHistoryUIEvent.NavigateExploreEvent -> {
+                WatchHistoryFragmentDirections.actionWatchHistoryFragmentToExploringFragment()
+            }
         }
         findNavController().navigate(action)
     }
-
 }

@@ -23,7 +23,7 @@
         tools:text="Star Wars"
         android:text="@{item.name}"
         style="@style/Regular.Medium"
-        android:textColor="@color/shade_secondary_color"
+        android:textColor="@color/shade_secondary"
         android:drawablePadding="6dp"
         app:drawableEndCompat="@drawable/ic_arrow_up_left"
         android:onClick="@{() -> listener.onClickSearchHistory(item.name)}"/>

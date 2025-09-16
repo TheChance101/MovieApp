@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MovieEditText">
+        <attr name="helperText" format="string" />
+        <attr name="showEye" format="boolean" />
+    </declare-styleable>
+</resources>

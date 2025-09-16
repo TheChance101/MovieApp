@@ -50,7 +50,7 @@
             android:layout_marginTop="@dimen/spacing_medium"
             android:gravity="center"
             android:text="@string/description"
-            android:textColor="@color/brand_color"
+            android:textColor="@color/brand_primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title_lost_connection"
@@ -97,7 +97,7 @@
             android:hint="@string/search_hint"
             android:onClick="@{() -> viewModel.onClickSearch()}"
             android:paddingStart="@dimen/spacing_small"
-            android:textColorHint="@color/shade_ternary_color"
+            android:textColorHint="@color/shade_tertiary"
             android:transitionName="search_box"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -111,7 +111,7 @@
             android:layout_marginStart="@dimen/spacing_medium"
             android:layout_marginTop="@dimen/spacing_medium"
             android:layout_marginEnd="@dimen/spacing_medium"
-            android:backgroundTint="@color/card_background_color"
+            android:backgroundTint="@color/background_card"
             android:onClick="@{() -> viewModel.onClickMovies()}"
             app:cardCornerRadius="@dimen/radius_small"
             app:cardElevation="0dp"
@@ -136,7 +136,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/spacing_large"
                 android:text="@string/movies_label"
-                android:textColor="@color/brand_color" />
+                android:textColor="@color/brand_primary" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -145,7 +145,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="@dimen/spacing_medium"
-            android:backgroundTint="@color/card_background_color"
+            android:backgroundTint="@color/background_card"
             android:onClick="@{() -> viewModel.onClickTVShow()}"
             app:cardCornerRadius="@dimen/radius_small"
             app:cardElevation="0dp"
@@ -170,7 +170,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/spacing_large"
                 android:text="@string/tv_shows_label"
-                android:textColor="@color/brand_color" />
+                android:textColor="@color/brand_primary" />
 
         </androidx.cardview.widget.CardView>
 
@@ -181,7 +181,7 @@
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/spacing_medium"
             android:layout_marginTop="@dimen/spacing_medium"
-            android:backgroundTint="@color/card_background_color"
+            android:backgroundTint="@color/background_card"
             android:onClick="@{() -> viewModel.onClickActors()}"
             app:cardCornerRadius="@dimen/radius_small"
             app:cardElevation="0dp"
@@ -206,7 +206,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/spacing_large"
                 android:text="@string/actors_label"
-                android:textColor="@color/brand_color" />
+                android:textColor="@color/brand_primary" />
 
         </androidx.cardview.widget.CardView>
 
@@ -217,7 +217,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_large"
             android:text="@string/trending_today_label"
-            android:textColor="@color/shade_primary_color"
+            android:textColor="@color/shade_primary"
 
             app:doneLoading="@{viewModel.uiState.loading}"
             app:errorNotEmpty="@{viewModel.uiState.error}"

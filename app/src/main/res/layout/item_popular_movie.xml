@@ -70,7 +70,7 @@
             android:elevation="2dp"
             android:gravity="start|center"
             android:text="@{String.valueOf(item.movieRate)}"
-            android:textColor="@color/yellow"
+            android:textColor="@color/additional_primary_yellow"
             app:drawableStartCompat="@drawable/ic_star_filled"
             app:layout_constraintBaseline_toBaselineOf="@+id/text_movie_title"
             app:layout_constraintStart_toEndOf="@+id/text_movie_title" />

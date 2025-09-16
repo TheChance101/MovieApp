@@ -2,6 +2,6 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
     <corners android:radius="@dimen/radius_medium" />
-    <solid android:color="@color/card_background_color" />
+    <solid android:color="@color/background_card" />
 
 </shape>

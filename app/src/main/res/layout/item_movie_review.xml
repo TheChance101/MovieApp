@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="@{item.name}"
-            android:textColor="@color/shade_primary_color"
+            android:textColor="@color/shade_primary"
             app:layout_constraintStart_toEndOf="@+id/user_image"
             app:layout_constraintTop_toTopOf="@+id/user_image"
             tools:text="Elizabeth Jones" />
@@ -60,7 +60,7 @@
             android:text="@{item.content}"
             app:animDuration="500"
             app:collapsedLines="5"
-            app:ellipsizeTextColor="@color/brand_color"
+            app:ellipsizeTextColor="@color/brand_primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/user_name"

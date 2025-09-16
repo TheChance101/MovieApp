@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/colorControlHighlight">
+
+    <item>
+        <vector
+            android:width="240dp"
+            android:height="40dp"
+            android:viewportWidth="240"
+            android:viewportHeight="40">
+
+            <path
+                android:fillColor="@color/button_secondary"
+                android:pathData="M0,20 C0,4 4,0 20,0 L220,0 C236,0 240,4 240,20 C240,36 236,40 220,40 L20,40 C4,40 0,36 0,20 Z" />
+
+        </vector>
+    </item>
+
+</ripple>

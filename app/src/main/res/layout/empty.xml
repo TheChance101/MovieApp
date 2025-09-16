@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-64dp"
             android:text="@string/empty"
-            android:textColor="@color/brand_color"
+            android:textColor="@color/brand_primary"
             app:layout_constraintEnd_toEndOf="@+id/no_data"
             app:layout_constraintStart_toStartOf="@+id/no_data"
             app:layout_constraintTop_toBottomOf="@+id/no_data" />

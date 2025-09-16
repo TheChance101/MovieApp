@@ -8,7 +8,7 @@
     <item android:gravity="bottom">
         <shape>
             <size android:height="1dp" />
-            <solid android:color="@color/shade_quaternary_color" />
+            <solid android:color="@color/shade_quaternary" />
         </shape>
     </item>
 </layer-list>

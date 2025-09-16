@@ -18,13 +18,36 @@
     <dimen name="text_medium">14sp</dimen>
     <dimen name="text_small">12sp</dimen>
 
-    <!-- radius -->
-    <dimen name="radius_large">24dp</dimen>
-    <dimen name="radius_medium">16dp</dimen>
+
+    <!-- Font sizes -->
+    <dimen name="text_size_display_xl">40sp</dimen>
+    <dimen name="text_size_title_xl">24sp</dimen>
+    <dimen name="text_size_title_lg">20sp</dimen>
+    <dimen name="text_size_title_md">18sp</dimen>
+    <dimen name="text_size_title_sm">16sp</dimen>
+
+    <dimen name="text_size_body_lg">16sp</dimen>
+    <dimen name="text_size_body_md">14sp</dimen>
+    <dimen name="text_size_body_sm">12sp</dimen>
+
+    <dimen name="text_size_label_md">12sp</dimen>
+
+
+    <!-- radius  -->
+    <dimen name="radius_xxsmall">2dp</dimen>
+    <dimen name="radius_xsmall">4dp</dimen>
     <dimen name="radius_small">8dp</dimen>
-    <dimen name="radius_too_small">4dp</dimen>
+    <dimen name="radius_medium">10dp</dimen>
+    <dimen name="radius_large">12dp</dimen>
+    <dimen name="radius_xlarge">16dp</dimen>
+    <dimen name="radius_2large">20dp</dimen>
+    <dimen name="radius_3large">24dp</dimen>
+    <dimen name="radius_4xlarge">28dp</dimen>
+    <dimen name="radius_5xlarge">32dp</dimen>
 
     <!-- chips -->
     <dimen name="chip_height">32dp</dimen>
+
+
 
 </resources>

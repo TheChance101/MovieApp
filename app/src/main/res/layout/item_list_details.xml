@@ -27,7 +27,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/card_background_color">
+            android:background="@color/background_card">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_movie"
@@ -67,7 +67,7 @@
                 android:drawableStart="@drawable/ic_star_small"
                 android:drawablePadding="@dimen/spacing_too_small"
                 android:text="@{String.valueOf(item.voteAverage)}"
-                android:textColor="@color/yellow"
+                android:textColor="@color/additional_primary_yellow"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/image_movie"
                 tools:text="8.4" />

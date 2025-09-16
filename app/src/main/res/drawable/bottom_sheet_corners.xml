@@ -4,5 +4,5 @@
         android:topRightRadius="@dimen/spacing_large"
         android:topLeftRadius="@dimen/spacing_large" />
 
-    <solid android:color="@color/card_background_color" />
+    <solid android:color="@color/background_card" />
 </shape>
