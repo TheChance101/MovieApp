@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--background-->
+    <color name="background_screen">#F7F7F7</color>
+    <color name="background_card">#FFFFFF</color>
+    <color name="background_bottom_sheet">#FFFFFF</color>
+    <color name="background_bottom_sheet_card">#F6F6F6</color>
+
+    <!--shade-->
+    <color name="shade_primary">#313131</color>
+    <color name="shade_secondary">#717171</color>
+    <color name="shade_tertiary">#A5A5A5</color>
+    <color name="shade_quaternary">#ECECEC</color>
+    <color name="shade_quinary">#F6F6F6</color>
+
+    <!--brand-->
+    <color name="brand_primary">#536DFE</color>
+    <color name="brand_secondary">#BEC8FF</color>
+    <color name="brand_tertiary">#F1F3FF</color>
+
+    <!--button-->
+    <color name="button_primary">#536DFE</color>
+    <color name="button_secondary">#F1F3FF</color>
+    <color name="button_disabled">#E5E5E5</color>
+    <color name="button_onPrimary">#FFFFFF</color>
+    <color name="button_onSecondary">#313131</color>
+    <color name="button_onDisabled">#A5A5A5</color>
+    <color name="button_onTertiary">#536DFE</color>
+
+    <!--stroke-->
+    <color name="stroke_primary">#ECECEC</color>
+    <!--<color name="glow">#ECECEC</color>-->
+
+    <!--overlay-->
+    <color name="overlay_primary">#99FFFFFF</color>
+    <color name="overlay_secondary">#3DFFFFFF</color>
+
+    <!--additional-->
+    <color name="additional_primary_red">#EF4444</color>
+    <color name="additional_primary_green">#22C55E</color>
+    <color name="additional_primary_yellow">#FACC15</color>
+    <color name="additional_secondary_red">#EBEEEE</color>
+    <color name="additional_secondary_green">#EEF5EF</color>
+    <color name="additional_secondary_yellow">#FFFAEB</color>
+
+    <!--old colors-->
     <color name="brand_color">#E82627</color>
     <color name="background_color">#FFFFFF</color>
 

@@ -1,57 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:background="@color/background_color"
+    android:layout_marginVertical="@dimen/spacing_small"
+    android:layout_marginHorizontal="@dimen/spacing_small"
+    android:background="@android:color/transparent">
 
-    <data>
+    <FrameLayout
+        android:id="@+id/image_container"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@color/background_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <variable
-            name="listener"
-            type="com.karrar.movieapp.ui.adapters.ActorsInteractionListener" />
-
-        <variable
-            name="item"
-            type="com.karrar.movieapp.ui.models.ActorUiState"
-            />
-    </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:background="@color/background_color"
-        android:layout_marginVertical="@dimen/spacing_small"
-        android:layout_marginHorizontal="@dimen/spacing_small"
-        android:background="@android:color/transparent">
+        <ImageView
+            android:id="@+id/noImg_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_no_actor_img"
+            android:contentDescription="@string/no_img"
+            android:visibility="visible"
+            app:tint="@color/gray"
+            tools:visibility="visible" />
+        <ImageView
+            android:id="@+id/placeholder_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_user"
+            android:contentDescription="@string/actor_placeholder"
+            android:visibility="visible"
+            app:tint="@color/gray"
+            tools:visibility="visible" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/image_actor"
-            android:layout_width="@dimen/spacing_actor"
-            android:layout_height="@dimen/spacing_actor"
-            android:background="@color/gray"
-            android:onClick="@{()->listener.onClickActor(item.id)}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:posterImage="@{item.imageUrl}"
-            app:shapeAppearanceOverlay="@style/Circle" />
+            android:visibility="gone"
+            app:shapeAppearanceOverlay="@style/Circle"
+            tools:visibility="gone"
+            tools:src="@tools:sample/avatars" />
 
+    </FrameLayout>
 
-        <TextView
-            android:id="@+id/text_actor_name"
-            style="@style/SemiBold.Small"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:ellipsize="end"
-            android:lines="1"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image_actor"
-            android:text="@{item.name}"
-            tools:text="Debora Caprioglio"
-            />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/text_actor_name"
+        style="@style/SemiBold.Small"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_container"
+        android:text="@string/actor_name"
+        tools:text="Debora Caprioglio" />
 
-</layout>
+</androidx.constraintlayout.widget.ConstraintLayout>

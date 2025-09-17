@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    style="@style/CardCorners.radiusLarge"
+    app:cardElevation="0dp"
+    android:backgroundTint="@color/background_card">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:layout_marginBottom="@dimen/spacing_medium"
+        android:layout_marginEnd="@dimen/radius_lg">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/circle_icon"
+            android:layout_width="@dimen/circle_icon"
+            android:layout_height="@dimen/circle_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:shapeAppearance="@style/CircleImage"
+            app:cardElevation="0dp"
+            android:backgroundTint="@color/shade_quinary">
+
+            <ImageView
+                android:layout_width="@dimen/spacing_large"
+                android:layout_height="@dimen/spacing_large"
+                android:backgroundTint="@color/shade_quinary"
+                android:contentDescription="@string/icon"
+                app:shapeAppearanceOverlay="@style/Circle"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_magic_stick"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_weight="1"
+            tools:text="Title"
+            android:layout_marginStart="@dimen/radius_lg"
+            android:layout_marginEnd="@dimen/radius_lg"
+            style="@style/Typography.title_sm"
+            android:textColor="@color/shade_primary"
+            app:layout_constraintEnd_toStartOf="@id/arrow_icon"
+            app:layout_constraintBottom_toTopOf="@id/caption"
+            app:layout_constraintStart_toEndOf="@id/circle_icon"
+            app:layout_constraintTop_toTopOf="@id/circle_icon"/>
+
+        <TextView
+            android:id="@+id/caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_weight="1"
+            tools:text="Caption"
+            style="@style/Typography.body_sm_medium"
+            android:textColor="@color/shade_secondary"
+            android:layout_marginTop="@dimen/spacing_too_small"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/title"/>
+
+        <ImageView
+            android:id="@+id/arrow_icon"
+            android:layout_width="@dimen/radius_2xl"
+            android:layout_height="@dimen/radius_2xl"
+            android:contentDescription="@string/icon"
+            android:src="@drawable/ic_alt_arrow_right"
+            app:layout_constraintTop_toTopOf="@id/circle_icon"
+            app:layout_constraintBottom_toBottomOf="@id/circle_icon"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1a1a1a">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/switch_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/switch_enabled_on"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:background="@drawable/switch_track_on"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/thumb_enabled_on"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/switch_thumb_white" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/switch_enabled_off"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/switch_track_off"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintStart_toEndOf="@id/switch_enabled_on"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/thumb_enabled_off"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="2dp"
+                android:background="@drawable/switch_thumb_gray" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/switch_disabled_on"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="24dp"
+            android:alpha="0.5"
+            android:background="@drawable/switch_track_off"
+            app:layout_constraintStart_toStartOf="@id/switch_enabled_on"
+            app:layout_constraintTop_toBottomOf="@id/switch_enabled_on">
+
+            <View
+                android:id="@+id/thumb_disabled_on"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/switch_thumb_gray" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/switch_disabled_off"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="24dp"
+            android:alpha="0.5"
+            android:background="@drawable/switch_track_off"
+            app:layout_constraintStart_toStartOf="@id/switch_enabled_off"
+            app:layout_constraintTop_toBottomOf="@id/switch_enabled_off">
+
+            <View
+                android:id="@+id/thumb_disabled_off"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="2dp"
+                android:background="@drawable/switch_thumb_gray" />
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

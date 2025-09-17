@@ -25,6 +25,22 @@
             android:id="@+id/action_homeFragment_to_tvShowDetailsFragment"
             app:destination="@id/tvShowDetailsFragment" />
 
+        <action
+            android:id="@+id/action_homeFragment_to_exploringFragment"
+            app:destination="@id/exploringFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_watchHistoryFragment"
+            app:destination="@id/watchHistoryFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_myListFragment"
+            app:destination="@+id/myListFragment"/>
+        <action
+            android:id="@+id/action_homeFragment_to_listDetailsFragment"
+            app:destination="@+id/listDetailsFragment"/>
+
+
     </fragment>
 
     <fragment
@@ -109,6 +125,9 @@
         <action
             android:id="@+id/action_profileFragment_to_watchHistoryFragment"
             app:destination="@id/watchHistoryFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_MyCollectionFragment"
+            app:destination="@id/myListFragment" />
 
         <action
             android:id="@+id/action_profileFragment_to_loginFragment"
@@ -121,7 +140,7 @@
 
     <fragment
         android:id="@+id/myListFragment"
-        android:name="com.karrar.movieapp.ui.myList.MyListsFragment"
+        android:name="com.karrar.movieapp.ui.myList.MyCollectionFragment"
         tools:layout="@layout/fragment_my_lists">
         <action
             android:id="@+id/action_myListFragment_to_createSavedList"
@@ -233,7 +252,7 @@
     </dialog>
     <dialog
         android:id="@+id/createSavedList"
-        android:name="com.karrar.movieapp.ui.myList.CreateListDialog"
+        android:name="com.karrar.movieapp.ui.myList.CreateCollectionDialog"
         tools:layout="@layout/fragment_create_list_dialog">
 
     </dialog>
@@ -275,7 +294,7 @@
     </activity>
     <fragment
         android:id="@+id/listDetailsFragment"
-        android:name="com.karrar.movieapp.ui.myList.listDetails.ListDetailsFragment"
+        android:name="com.karrar.movieapp.ui.myList.collectionDetails.CollectionDetailsFragment"
         tools:layout="@layout/fragment_list_details">
         <argument
             android:name="id"
@@ -326,6 +345,19 @@
         <action
             android:id="@+id/action_tvShowDetailFragment_to_youtubePlayerActivity"
             app:destination="@id/youtubePlayerActivity" />
+        <action
+            android:id="@+id/action_tvShowDetailsFragment_to_seasonFragment"
+            app:destination="@id/seasonFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/seasonFragment"
+        android:name="com.karrar.movieapp.ui.tvShowDetails.season.SeasonFragment"
+        android:label="Seasons"
+        tools:layout="@layout/fragment_season">
+        <argument
+            android:name="tvShowId"
+            app:argType="integer" />
     </fragment>
 
 </navigation>

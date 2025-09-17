@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="listener"
+            type="com.karrar.movieapp.ui.home.adapter.RecentlyViewedInteractionListener" />
+
+        <variable
+            name="item"
+            type="com.karrar.movieapp.ui.profile.watchhistory.MediaHistoryUiState" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="0dp"
+            android:layout_height="182dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="136:182"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:background="@color/brand_primary"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="@{()->listener.onClickMovie(item)}"
+            app:posterImage="@{item.posterPath}"
+            app:shapeAppearanceOverlay="@style/CardCorners.Medium"
+            android:id="@+id/img_poster"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="@id/img_poster"
+            app:layout_constraintEnd_toEndOf="@id/img_poster"
+            android:background="@drawable/media_rate_background"
+            android:layout_margin="@dimen/spacing_small"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/spacing_small"
+            android:paddingVertical="@dimen/spacing_too_small">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{item.voteAverage}"
+                tools:text="5.7"
+                android:textColor="@color/shade_primary"
+                style="@style/Typography.label_md_medium" />
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="@dimen/spacing_too_small"
+                android:src="@drawable/ic_star_duetone"
+                app:tint="@color/additional_primary_yellow"
+                />
+        </LinearLayout>
+        <TextView
+            style="@style/Typography.body_md_medium"
+            android:textColor="@color/shade_secondary"
+            android:text="@{item.movieTitle}"
+            tools:text="Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/img_poster"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

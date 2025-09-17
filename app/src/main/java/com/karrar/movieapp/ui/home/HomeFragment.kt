@@ -29,29 +29,33 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         collectHomeData()
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.getData()
+    }
+
     private fun collectHomeData() {
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.homeUiState.collect {
+            viewModel.homeUiState.collect { uiState ->
                 homeAdapter.setItems(
                     mutableListOf(
-                        it.popularMovies,
-                        it.tvShowsSeries,
-                        it.onTheAiringSeries,
-                        it.airingTodaySeries,
-                        it.upcomingMovies,
-                        it.nowStreamingMovies,
-                        it.mysteryMovies,
-                        it.adventureMovies,
-                        it.trendingMovies,
-                        it.actors,
+                        uiState.popularMovies,
+                        uiState.onTheAiringSeries,
+                        uiState.upcomingMovies,
+                        uiState.recentlyReleasedMovies,
+                        uiState.browseEverything,
+                        uiState.letUsChooseForYou,
+                        uiState.recentlyViewed,
+                        uiState.collections
                     )
                 )
             }
         }
     }
 
+
     private fun setAdapter() {
-        homeAdapter = HomeAdapter(mutableListOf(), viewModel)
+        homeAdapter = HomeAdapter(mutableListOf(), viewModel, viewLifecycleOwner.lifecycleScope)
         binding.recyclerView.adapter = homeAdapter
     }
 
@@ -63,18 +67,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private fun onEvent(event: HomeUIEvent) {
         val action = when (event) {
-            is HomeUIEvent.ClickActorEvent -> {
-                HomeFragmentDirections.actionHomeFragmentToActorDetailsFragment(
-                    event.actorID
-                )
-            }
             is HomeUIEvent.ClickMovieEvent -> {
                 HomeFragmentDirections.actionHomeFragmentToMovieDetailFragment(
                     event.movieID
                 )
-            }
-            HomeUIEvent.ClickSeeAllActorEvent -> {
-                HomeFragmentDirections.actionHomeFragmentToActorsFragment()
             }
             is HomeUIEvent.ClickSeeAllMovieEvent -> {
                 HomeFragmentDirections.actionHomeFragmentToAllMovieFragment(
@@ -91,6 +87,28 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 HomeFragmentDirections.actionHomeFragmentToTvShowDetailsFragment(
                     event.seriesID
                 )
+            }
+            is HomeUIEvent.ClickBrowseEverythingEvent -> {
+                HomeFragmentDirections.actionHomeFragmentToExploringFragment()
+            }
+
+            is HomeUIEvent.ClickSeeAllRecentlyViewedEvent -> {
+                HomeFragmentDirections.actionHomeFragmentToWatchHistoryFragment()
+            }
+
+            is HomeUIEvent.ClickLetUsChooseForYouEvent -> {
+                HomeFragmentDirections.actionHomeFragmentToMyListFragment()
+            }
+
+            is HomeUIEvent.ClickCollectionList -> {
+                HomeFragmentDirections.actionHomeFragmentToListDetailsFragment(
+                    event.list.listID,
+                    event.list.name
+                )
+            }
+
+            HomeUIEvent.ClickSeeAllCollectionsEvent -> {
+                HomeFragmentDirections.actionHomeFragmentToMyListFragment()
             }
         }
         findNavController().navigate(action)

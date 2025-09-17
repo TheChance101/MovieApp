@@ -13,6 +13,7 @@ import com.karrar.movieapp.ui.base.BaseFragment
 import com.karrar.movieapp.ui.explore.exploreUIState.ExploringUIEvent
 import com.karrar.movieapp.ui.explore.exploreUIState.TrendyMediaUIState
 import com.karrar.movieapp.utilities.Constants
+import com.google.android.material.tabs.TabLayout
 import com.karrar.movieapp.utilities.collectLast
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,6 +34,27 @@ class ExploringFragment : BaseFragment<FragmentExploringBinding>() {
         setTitle(true, resources.getString(R.string.explore_label))
         collectEvent()
         binding.recyclerTrend.adapter = TrendAdapter(mutableListOf(), viewModel)
+
+        // Add your tabs
+        binding.includeTabs.layout.apply {
+            addTab(newTab().setText("Movies"))
+            addTab(newTab().setText("TV Shows"))
+            addTab(newTab().setText("Actors"))
+        }
+
+        // Listen for tab selection
+        binding.includeTabs.layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                when (tab?.position) {
+                    0 -> viewModel.onClickMovies()
+                    1 -> viewModel.onClickTVShow()
+                    2 -> viewModel.onClickActors()
+                }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {}
+            override fun onTabReselected(tab: TabLayout.Tab?) {}
+        })
     }
 
     private fun collectEvent() {

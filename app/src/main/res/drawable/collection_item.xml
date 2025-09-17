@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape
+            android:shape="rectangle"
+            >
+            <solid android:color="@color/background_bottom_sheet_card"/>
+            <corners android:radius="@dimen/radius_lg"/>
+        </shape>
+    </item>
+
+    <item>
+        <shape
+            android:shape="rectangle"
+            >background_card
+            <solid android:color="@color/background_card"/>
+            <corners android:radius="@dimen/radius_lg"/>
+        </shape>
+    </item>
+</selector>

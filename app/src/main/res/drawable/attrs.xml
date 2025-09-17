@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <declare-styleable android:name="ExpandableTextView">
+        <attr android:name="animDuration" android:format="integer" />
+        <attr android:name="readLessText" android:format="string" />
+        <attr android:name="readMoreText" android:format="string" />
+        <attr android:name="ellipsizeTextColor" android:format="color" />
+        <attr android:name="collapsedLines" android:format="integer" />
+    </declare-styleable>
+</resources>

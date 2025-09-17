@@ -19,38 +19,60 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/spacing_small"
         android:layout_marginHorizontal="@dimen/spacing_small"
-        android:backgroundTint="@color/background_color"
+        android:background="@drawable/cast_card"
         android:onClick="@{() -> listener.onClickActor(item.id)}"
         >
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/cast_image"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:scaleType="centerCrop"
             android:background="@color/gray"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:posterImage="@{item.imageUrl}"
-            app:shapeAppearanceOverlay="@style/Circle"
+            app:shapeAppearanceOverlay="@style/cast_image"
             tools:srcCompat="@drawable/image"
             />
 
-        <TextView
-            android:id="@+id/cast_name"
-            style="@style/Regular.Small.Secondary"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:ellipsize="end"
-            android:lines="2"
-            android:text="@{item.name}"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="@+id/cast_image"
-            app:layout_constraintStart_toStartOf="@+id/cast_image"
-            app:layout_constraintTop_toBottomOf="@+id/cast_image"
-            tools:text="Debora Caprioglio" />
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/cast_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="12dp"
+            android:paddingEnd="12dp"
+            >
+
+            <TextView
+                android:id="@+id/cast_name"
+                style="@style/Typography.body_md_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="@{item.name}"
+                android:textAlignment="center"
+                android:textColor="@color/shade_primary"
+                tools:text="Real Name" />
+
+            <TextView
+                android:id="@+id/cast_name_in_movie"
+                style="@style/Typography.body_sm_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="@{item.name}"
+                android:textAlignment="center"
+                android:textColor="@color/shade_secondary"
+                tools:text="Name in Movie" />
+
+        </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

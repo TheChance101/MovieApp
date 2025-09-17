@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="caption"
+            type="String" />
+
+        <variable
+            name="disabledButton"
+            type="String" />
+
+        <variable
+            name="enabledButton"
+            type="String" />
+
+        <variable
+            name="onDisabledClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="onEnabledClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginEnd="120dp"
+            android:background="@drawable/message_info_box_logout_background"
+            android:padding="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:tint="@color/brand_primary"
+            app:srcCompat="@drawable/ic_logout_duetone" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/Typography.title_sm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{title}"
+            android:textColor="@color/shade_primary"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/Typography.body_sm_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{caption}"
+            android:textColor="@color/shade_secondary"
+            app:layout_constraintEnd_toEndOf="@+id/tv_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView3">
+
+            <androidx.cardview.widget.CardView
+                android:onClick="@{onDisabledClick}"
+                android:layout_width="93dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/button_disabled"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:layout_constraintStart_toEndOf="@id/card_small_loading"
+                app:layout_constraintTop_toTopOf="@id/card_small_loading">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/manrope_medium"
+                    android:paddingHorizontal="24dp"
+                    android:text="@{disabledButton}"
+                    android:textColor="@color/button_onDisabled"
+                    android:textSize="14sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="wrap_content" />
+
+            <androidx.cardview.widget.CardView
+                android:onClick="@{onEnabledClick}"
+                android:layout_width="93dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/button_primary"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:layout_constraintStart_toEndOf="@id/card_small_loading"
+                app:layout_constraintTop_toTopOf="@id/card_small_loading">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/manrope_medium"
+                    android:paddingHorizontal="24dp"
+                    android:text="@{enabledButton}"
+                    android:textColor="@color/button_onPrimary"
+                    android:textSize="14sp" />
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

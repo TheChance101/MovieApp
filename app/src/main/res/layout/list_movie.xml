@@ -17,13 +17,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/background_color"
-        android:layout_marginBottom="@dimen/spacing_medium">
+        android:layout_marginBottom="@dimen/spacing_medium"
+        >
 
         <TextView
             android:id="@+id/text_title"
-            style="@style/SemiBold.Medium"
-            tools:text="Now Streaming"
+            style="@style/Typography.title_sm"
+            android:textColor="@color/shade_primary"
+            tools:text="Title"
             android:layout_marginStart="@dimen/spacing_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,14 +33,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            style="@style/Regular.Small"
+            style="@style/Typography.body_md_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_medium"
             android:onClick="@{() -> adapterRecycler.listener.onClickSeeAllMovie(movieType)}"
-            android:text="@string/see_all"
-            android:textColor="@color/brand_color"
-            app:drawableEndCompat="@drawable/ic_arrow_right"
+            android:text="@string/show_more"
+            android:textColor="@color/brand_primary"
             app:layout_constraintBaseline_toBaselineOf="@+id/text_title"
             app:layout_constraintEnd_toEndOf="parent" />
 

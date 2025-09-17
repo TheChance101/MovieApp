@@ -13,118 +13,456 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background_color">
+        android:background="@color/background_screen"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        >
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/image_actor"
-            android:layout_width="0dp"
-            android:layout_height="128dp"
-            android:layout_marginTop="50dp"
-            android:background="@color/gray"
-            android:scaleType="centerCrop"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/user_profile_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
-            app:posterImage="@{viewModel.profileDetailsUIState.avatarPath}"
-            app:shapeAppearanceOverlay="@style/Circle"
-            tools:background="@drawable/actor" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/collection_item"
+            >
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image_actor"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="12dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:posterImage="@{viewModel.profileDetailsUIState.avatarPath}"
+                app:shapeAppearanceOverlay="@style/Circle"
+                tools:background="@drawable/actor" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/text_name_actor"
-            style="@style/SemiBold.Large"
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toEndOf="@id/image_actor"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="16dp"
+                >
+
+                <TextView
+                    android:id="@+id/text_name_actor"
+                    style="@style/Typography.body_lg_medium"
+                    android:textColor="@color/shade_primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.profileDetailsUIState.name}"
+                    tools:text="Name"
+                    />
+
+                <TextView
+                    android:id="@+id/text_username"
+                    style="@style/Typography.body_sm_medium"
+                    android:textColor="@color/shade_secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/at + viewModel.profileDetailsUIState.username}"
+                    tools:text="username"
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:contentDescription="@string/username"
+                android:src="@drawable/ic_arrow_right"
+                app:tint="@color/shade_tertiary"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="12dp"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/user_info_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/user_profile_section"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chip"
+                android:layout_marginEnd="8dp"
+                android:onClick="@{() -> viewModel.onClickWatchHistory()}"
+                >
+
+                <ImageView
+                    android:id="@+id/icon_history"
+                    android:contentDescription="@string/history"
+                    app:tint="@color/brand_primary"
+                    android:src="@drawable/ic_history_duetone"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    style="@style/Typography.label_md_medium"
+                    android:textColor="@color/shade_primary"
+                    android:text="@string/history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/icon_history"
+                    android:layout_marginStart="6dp"
+                    android:paddingEnd="12dp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chip"
+                android:layout_marginEnd="8dp"
+                android:onClick="@{() -> viewModel.onClickMyCollection()}"
+                >
+
+                <ImageView
+                    android:id="@+id/icon_my_collections"
+                    android:contentDescription="@string/my_collections"
+                    app:tint="@color/brand_primary"
+                    android:src="@drawable/ic_video_library_duetone"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    style="@style/Typography.label_md_medium"
+                    android:textColor="@color/shade_primary"
+                    android:text="@string/my_collections"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/icon_my_collections"
+                    android:layout_marginStart="6dp"
+                    android:paddingEnd="12dp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chip"
+                android:layout_marginEnd="8dp"
+                android:onClick="@{() -> viewModel.onClickRatedMovies()}"
+                >
+
+                <ImageView
+                    android:id="@+id/icon_my_ratings"
+                    android:contentDescription="@string/my_ratings"
+                    app:tint="@color/brand_primary"
+                    android:src="@drawable/ic_star_duetone"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    style="@style/Typography.label_md_medium"
+                    android:textColor="@color/shade_primary"
+                    android:text="@string/my_ratings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/icon_my_ratings"
+                    android:layout_marginStart="6dp"
+                    android:paddingEnd="12dp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/settings_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/user_info_section"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"
+            >
+
+            <TextView
+                android:id="@+id/settings_title"
+                style="@style/Typography.title_sm"
+                android:textColor="@color/shade_primary"
+                android:text="@string/settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/settings_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/collection_item"
+                android:layout_marginTop="12dp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/dark_mode_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:contentDescription="@string/dark_mode"
+                        android:id="@+id/icon_dark_mode"
+                        android:src="@drawable/ic_moon_duetone"
+                        app:tint="@color/brand_primary"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginVertical="18dp"
+                        android:layout_marginStart="16dp"
+                        />
+
+                    <TextView
+                        style="@style/Typography.body_md_medium"
+                        android:textColor="@color/shade_primary"
+                        android:text="@string/dark_mode"
+                        android:id="@+id/dark_mode_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/icon_dark_mode"
+                        android:layout_marginStart="8dp"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:dividerColor="@color/shade_quaternary"
+                    android:layout_marginHorizontal="16dp"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/language_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    >
+
+                    <ImageView
+                        android:contentDescription="@string/language"
+                        android:id="@+id/icon_language"
+                        android:src="@drawable/ic_language_duetone"
+                        app:tint="@color/brand_primary"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginVertical="18dp"
+                        android:layout_marginStart="16dp"
+                        />
+
+                    <TextView
+                        style="@style/Typography.body_md_medium"
+                        android:textColor="@color/shade_primary"
+                        android:text="@string/language"
+                        android:id="@+id/language_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/icon_language"
+                        android:layout_marginStart="8dp"
+                        />
+
+                    <ImageView
+                        android:src="@drawable/ic_arrow_right"
+                        app:tint="@color/shade_tertiary"
+                        android:contentDescription="@string/language"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="16dp"
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:dividerColor="@color/shade_quaternary"
+                    android:layout_marginHorizontal="16dp"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/content_preferences_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    
+                    >
+
+                    <ImageView
+                        android:contentDescription="@string/content_preferences"
+                        android:id="@+id/icon_content_preferences"
+                        android:src="@drawable/ic_color_swatch_duetone"
+                        app:tint="@color/brand_primary"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginVertical="18dp"
+                        android:layout_marginStart="16dp"
+                        />
+
+                    <TextView
+                        style="@style/Typography.body_md_medium"
+                        android:textColor="@color/shade_primary"
+                        android:text="@string/content_preferences"
+                        android:id="@+id/content_preferences_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/icon_content_preferences"
+                        android:layout_marginStart="8dp"
+                        />
+
+                    <ImageView
+                        android:src="@drawable/ic_arrow_right"
+                        app:tint="@color/shade_tertiary"
+                        android:contentDescription="@string/content_preferences"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="16dp"
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:dividerColor="@color/shade_quaternary"
+                    android:layout_marginHorizontal="16dp"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/logout_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> viewModel.onClickLogout()}"
+                    >
+
+                    <ImageView
+                        android:contentDescription="@string/logout"
+                        android:id="@+id/icon_logout"
+                        android:src="@drawable/ic_logout_duetone"
+                        app:tint="@color/additional_primary_red"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginVertical="18dp"
+                        android:layout_marginStart="16dp"
+                        />
+
+                    <TextView
+                        style="@style/Typography.body_md_medium"
+                        android:textColor="@color/additional_primary_red"
+                        android:text="@string/logout"
+                        android:id="@+id/logout_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/icon_logout"
+                        android:layout_marginStart="8dp"
+                        />
+
+                    <ImageView
+                        android:src="@drawable/ic_arrow_right"
+                        app:tint="@color/additional_primary_red"
+                        android:contentDescription="@string/logout"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="16dp"
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            style="@style/Typography.body_sm_regular"
+            android:textColor="@color/shade_tertiary"
+            android:text="Version TODO"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_medium"
-            android:text="@{viewModel.profileDetailsUIState.name}"
-            android:textColor="@color/shade_primary_color"
+            app:layout_constraintTop_toBottomOf="@id/settings_section"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_actor"
-            tools:text="Captain America" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/text_username"
-            style="@style/Regular.Medium.Secondary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_small"
-            android:text="@{@string/at + viewModel.profileDetailsUIState.username}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_name_actor"
-            tools:text="\@captn.ameri" />
-
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/text_watch_history"
-            style="@style/SemiBold.Medium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/spacing_medium"
-            android:layout_marginTop="@dimen/spacing_extra_large"
-            android:drawableStart="@drawable/ic_play_outlined"
-            android:drawablePadding="@dimen/spacing_medium"
-            android:onClick="@{() -> viewModel.onClickWatchHistory()}"
-            android:paddingVertical="@dimen/spacing_medium"
-            android:text="@string/watch_history"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_username" />
-
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/first_divider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/spacing_medium"
-            app:dividerColor="@color/shade_quaternary_color"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_watch_history" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/text_rated_movies"
-            style="@style/SemiBold.Medium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/spacing_medium"
-            android:drawableStart="@drawable/ic_star_outlined"
-            android:drawablePadding="@dimen/spacing_medium"
-            android:onClick="@{() -> viewModel.onClickRatedMovies()}"
-            android:paddingVertical="@dimen/spacing_medium"
-            android:text="@string/rated_movies"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_watch_history" />
-
-
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/second_divider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/spacing_medium"
-            app:dividerColor="@color/shade_quaternary_color"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_rated_movies" />
-
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/text_sign_out"
-            style="@style/SemiBold.Medium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/spacing_medium"
-            android:drawableStart="@drawable/ic_logout"
-            android:drawablePadding="@dimen/spacing_medium"
-            android:onClick="@{() -> viewModel.onClickLogout()}"
-            android:paddingVertical="@dimen/spacing_medium"
-            android:text="@string/sign_out"
-            android:textColor="@color/shade_ternary_color"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_rated_movies"
-            tools:ignore="MissingConstraints" />
+            android:layout_marginTop="24dp"
+            />
 
         <com.airbnb.lottie.LottieAnimationView
             android:layout_width="128dp"
@@ -194,78 +532,29 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/animation_lost_connection"
-            android:layout_width="128dp"
-            android:layout_height="128dp"
-            android:layout_marginBottom="@dimen/spacing_small"
-            app:layout_constraintBottom_toTopOf="@+id/title_lost_connection"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:lottie_autoPlay="true"
-            app:lottie_rawRes="@raw/lost_internet_animation" />
-
-        <TextView
-            android:id="@+id/title_lost_connection"
-            style="@style/SemiBold.Large"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_extra_large"
-            android:text="@string/oops"
+        <!-- error -->
+        <include
+            android:id="@+id/error"
+            layout="@layout/error2"
+            app:isError="@{viewModel.profileDetailsUIState.error}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/description_lost_connection"
-            style="@style/Regular.Medium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_medium"
-            android:gravity="center"
-            android:text="@string/description"
-            android:textColor="@color/brand_color"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title_lost_connection" />
-
-        <Button
-            android:id="@+id/button_retry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_medium"
-            android:onClick="@{() -> viewModel.getData()}"
-            android:text="@string/retry"
-            android:textColor="@color/white_primary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description_lost_connection" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:viewModel="@{viewModel}" />
 
         <androidx.constraintlayout.widget.Group
             android:id="@+id/group_when_success"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            app:constraint_referenced_ids="text_watch_history,
-            text_rated_movies,
-            text_sign_out,
-            first_divider,
-            second_divider,
-            image_actor,
-            text_name_actor,
-            text_username"
+            app:constraint_referenced_ids="
+            settings_section,
+            user_info_section,
+            user_profile_section"
             app:showProfileWhenSuccess="@{viewModel.profileDetailsUIState.username}"
             tools:visibility="visible" />
 
-        <androidx.constraintlayout.widget.Group
-            android:id="@+id/group_when_no_internet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            app:constraint_referenced_ids="title_lost_connection,animation_lost_connection,description_lost_connection,button_retry"
-            app:isFail="@{viewModel.profileDetailsUIState.error}"
-            app:isLoggedIn="@{viewModel.profileDetailsUIState.loggedIn}" />
 
         <androidx.constraintlayout.widget.Group
             android:id="@+id/group_when_no_logged_in"

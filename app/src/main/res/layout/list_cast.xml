@@ -32,14 +32,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_small"
-            android:orientation="horizontal"
-            android:clipToPadding="false"
-            android:paddingHorizontal="@dimen/spacing_small"
             android:adapter="@{adapterRecycler}"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/spacing_small"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cast"
+            app:spanCount="2"
             tools:listitem="@layout/item_cast" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

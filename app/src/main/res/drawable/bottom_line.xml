@@ -2,13 +2,13 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape>
-            <solid android:color="@color/background_color" />
+            <solid android:color="@color/shade_quaternary" />
         </shape>
     </item>
     <item android:gravity="bottom">
         <shape>
             <size android:height="1dp" />
-            <solid android:color="@color/shade_quaternary_color" />
+            <solid android:color="@color/shade_quaternary" />
         </shape>
     </item>
 </layer-list>

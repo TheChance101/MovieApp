@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_small_loading"
+        android:layout_width="72dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="@color/button_primary"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="32dp"
+            android:indeterminateTint="@color/button_onPrimary"
+            style="?android:attr/progressBarStyleSmall" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_small_primary"
+        android:layout_width="93dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        app:cardBackgroundColor="@color/button_primary"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toEndOf="@id/card_small_loading"
+        app:layout_constraintTop_toTopOf="@id/card_small_loading">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingHorizontal="24dp"
+            android:text="@string/button"
+            android:textColor="@color/button_onPrimary"
+            android:textSize="14sp"
+            android:fontFamily="@font/manrope_medium" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_small_disabled"
+        android:layout_width="93dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:alpha="0.5"
+        app:cardBackgroundColor="@color/button_disabled"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toEndOf="@id/card_small_primary"
+        app:layout_constraintTop_toTopOf="@id/card_small_loading">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingHorizontal="24dp"
+            android:text="@string/button"
+            android:textColor="@color/button_onDisabled"
+            android:textSize="14sp"
+            android:fontFamily="@font/manrope_medium"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_medium_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/button_primary"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="@id/card_small_loading"
+        app:layout_constraintTop_toBottomOf="@id/card_small_loading">
+
+        <ProgressBar
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="32dp"
+            android:indeterminateTint="@color/button_onPrimary"
+            style="?android:attr/progressBarStyleSmall" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_medium_primary"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        app:cardBackgroundColor="@color/button_primary"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toEndOf="@id/card_medium_loading"
+        app:layout_constraintTop_toTopOf="@id/card_medium_loading">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingHorizontal="32dp"
+            android:text="@string/button"
+            android:textColor="@color/button_onPrimary"
+            android:textSize="16sp"
+            android:fontFamily="@font/manrope_medium" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_medium_disabled"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:alpha="0.5"
+        app:cardBackgroundColor="@color/button_disabled"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toEndOf="@id/card_medium_primary"
+        app:layout_constraintTop_toTopOf="@id/card_medium_loading">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingHorizontal="32dp"
+            android:text="@string/button"
+            android:textColor="@color/button_onDisabled"
+            android:textSize="16sp"
+            android:fontFamily="@font/manrope_medium" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_large_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/button_primary"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="@id/card_medium_loading"
+        app:layout_constraintTop_toBottomOf="@id/card_medium_loading">
+
+        <ProgressBar
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="40dp"
+            android:indeterminateTint="@color/button_onPrimary"
+            style="?android:attr/progressBarStyleSmall" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_large_primary"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        app:cardBackgroundColor="@color/button_primary"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toEndOf="@id/card_large_loading"
+        app:layout_constraintTop_toTopOf="@id/card_large_loading">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingHorizontal="32dp"
+            android:text="@string/button"
+            android:textColor="@color/button_onPrimary"
+            android:textSize="18sp"
+            android:fontFamily="@font/manrope_semi_bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_large_disabled"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:alpha="0.5"
+        app:cardBackgroundColor="@color/button_disabled"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toEndOf="@id/card_large_primary"
+        app:layout_constraintTop_toTopOf="@id/card_large_loading">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingHorizontal="32dp"
+            android:text="@string/button"
+            android:textColor="@color/button_onDisabled"
+            android:textSize="18sp"
+            android:fontFamily="@font/manrope_semi_bold" />
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

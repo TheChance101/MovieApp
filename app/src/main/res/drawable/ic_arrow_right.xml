@@ -2,7 +2,8 @@
     android:width="20dp"
     android:height="20dp"
     android:viewportWidth="20"
-    android:viewportHeight="20">
+    android:viewportHeight="20"
+    android:autoMirrored="true">
   <group>
     <clip-path
         android:pathData="M0,0h20v20h-20z"/>

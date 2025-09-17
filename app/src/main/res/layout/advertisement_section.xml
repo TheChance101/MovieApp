@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="What Should I Watch?"
+            style="@style/Typography.title_sm"
+            android:textColor="@color/shade_primary"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <include
+            android:id="@+id/advertise_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/cta_card"
+            android:layout_marginTop="@dimen/radius_lg"
+            app:layout_constraintTop_toBottomOf="@id/header"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+

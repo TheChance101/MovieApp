@@ -52,7 +52,7 @@
                 android:onClick="@{() -> viewModel.onLogout()}"
                 android:paddingHorizontal="@dimen/spacing_small"
                 android:paddingVertical="@dimen/spacing_small"
-                android:text="@string/logout"
+                android:text="@string/signout"
                 android:textColor="@color/brand_color"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

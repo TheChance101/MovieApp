@@ -14,6 +14,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_medium"
+        android:layout_marginVertical="@dimen/spacing_small"
+        android:background="@drawable/card_bg"
         android:paddingHorizontal="@dimen/spacing_medium"
         android:paddingTop="@dimen/spacing_small">
 
@@ -30,65 +33,61 @@
 
         <TextView
             android:id="@+id/name"
-            style="@style/Regular.Medium.Primary"
+            style="@style/Typography.body_md_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="@{item.name}"
-            android:textColor="@color/shade_primary_color"
+            android:textColor="@color/shade_primary"
             app:layout_constraintStart_toEndOf="@+id/user_image"
             app:layout_constraintTop_toTopOf="@+id/user_image"
             tools:text="Elizabeth Jones" />
 
         <TextView
             android:id="@+id/user_name"
-            style="@style/Regular.Small.ternary"
+            style="@style/Typography.body_sm_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{@string/user_name(item.userName)}"
+            android:textColor="@color/shade_secondary"
             app:layout_constraintStart_toStartOf="@+id/name"
             app:layout_constraintTop_toBottomOf="@+id/name"
             tools:text="e_jones" />
 
-        <io.github.glailton.expandabletextview.ExpandableTextView
+        <TextView
             android:id="@+id/comment"
-            style="@style/Regular.Small.Primary"
+            style="@style/Typography.body_md_medium"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxLines="4"
             android:text="@{item.content}"
-            app:animDuration="500"
-            app:collapsedLines="5"
-            app:ellipsizeTextColor="@color/brand_color"
+            android:textColor="@color/shade_primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/user_name"
-            app:readLessText=""
-            app:readMoreText="Read more"
             tools:text="Krasinski's instincts are very good, and once you've placed the primary action there, then it allows the story instincts are very good, and once you've placed the primary action there, then it allows the story" />
 
-
-        <androidx.appcompat.widget.AppCompatRatingBar
+        <RatingBar
             android:id="@+id/rating_bar"
-            android:layout_width="0dp"
-            android:layout_height="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:isIndicator="true"
+            android:numStars="5"
             android:progressDrawable="@drawable/rating_custom"
             android:rating="@{item.rating}"
-            android:scaleX="0.5"
-            android:scaleY="0.5"
-            android:stepSize="0.5"
-            android:transformPivotX="0dp"
             app:layout_constraintStart_toStartOf="@+id/comment"
             app:layout_constraintTop_toBottomOf="@+id/comment" />
 
         <TextView
             android:id="@+id/comment_date"
-            style="@style/Regular.Small.ternary"
+            style="@style/Typography.body_sm_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{item.createDate}"
+            android:textColor="@color/shade_secondary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/rating_bar"
             tools:text="3w ago" />

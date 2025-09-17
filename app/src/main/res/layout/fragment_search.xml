@@ -140,17 +140,19 @@
             android:layout_height="0dp"
             android:clipToPadding="false"
             android:orientation="vertical"
-            android:paddingHorizontal="@dimen/spacing_small"
-            android:paddingVertical="@dimen/spacing_small"
+            android:paddingVertical="@dimen/spacing_medium"
             app:errorSearch="@{viewModel.uiState.error}"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/chip_group_media_type"
             app:loadingSearch="@{viewModel.uiState.loading}"
             app:searchInput="@{viewModel.uiState.searchInput}"
-            tools:listitem="@layout/item_media_search" />
+            tools:listitem="@layout/item_media_search"
+            android:layout_marginEnd="16dp"
+            />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_search_history"
@@ -181,9 +183,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- error -->
         <include
             android:id="@+id/error"
-            layout="@layout/error_search"
+            layout="@layout/error2"
             app:isError="@{!viewModel.uiState.error.isEmpty()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

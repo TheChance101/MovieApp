@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.karrar.movieapp.ui.home.adapter.YourCollectionsInteractionListener" />
+
+        <variable
+            name="movieType"
+            type="com.karrar.movieapp.domain.enums.HomeItemsType" />
+
+        <variable
+            name="adapterRecycler"
+            type="com.karrar.movieapp.ui.home.adapter.YourCollectionsAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.karrar.movieapp.ui.components.header.SectionHeaderView
+            android:id="@+id/header"
+            app:isVisible="@{adapterRecycler.itemCount != 0}"
+            style="@style/Typography.title_sm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/shade_primary"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showSeeAll="true"
+            tools:text="Your Collections" />
+<!--        android:text="@{movieType.YOUR_COLLECTIONS.value}"-->
+        <!--        app:onSeeAllClick="@{() -> adapterRecycler.listener.onClickSeeAllCollections()}"-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_movie"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:adapter="@{adapterRecycler}"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            android:paddingHorizontal="16dp"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header"
+
+            tools:listitem="@layout/item_saved_list" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

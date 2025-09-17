@@ -128,7 +128,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
         val footerAdapter = LoadUIStateAdapter(mediaSearchAdapter::retry)
         binding.recyclerMedia.adapter = mediaSearchAdapter.withLoadStateFooter(footerAdapter)
         binding.recyclerMedia.layoutManager =
-            LinearLayoutManager(this@SearchFragment.context, RecyclerView.VERTICAL, false)
+            GridLayoutManager(this@SearchFragment.context, 2)
 
         collect(flow = mediaSearchAdapter.loadStateFlow,
             action = { viewModel.setErrorUiState(it, mediaSearchAdapter.itemCount) })

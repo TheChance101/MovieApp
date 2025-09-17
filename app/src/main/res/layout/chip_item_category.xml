@@ -18,12 +18,11 @@
         style="@style/Colors_Widget.MaterialComponents.Chip.Choice"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/chip_height"
-        android:fontFamily="@font/plus_jakarta_sans_regular"
         android:onClick="@{() -> listener.onClickCategory(item.genreID)}"
         android:text="@{item.genreName}"
         android:textSize="@dimen/text_small"
         app:chipMinTouchTargetSize="0dp"
-        tools:backgroundTint="@color/background_color"
+        tools:backgroundTint="@color/background_card"
         tools:text="Movie Category" />
 
 </layout>

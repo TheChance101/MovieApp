@@ -17,7 +17,7 @@ class WatchHistoryFragment : BaseFragment<FragmentWatchHistoryBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setTitle(true, getString(R.string.watch_history))
+        setTitle(true, getString(R.string.history))
         binding.recyclerViewWatchHistory.adapter = WatchHistoryAdapter(emptyList(), viewModel)
         collectEvent()
     }

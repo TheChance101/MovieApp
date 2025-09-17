@@ -8,7 +8,7 @@ import com.karrar.movieapp.ui.search.mediaSearchUIState.MediaUIState
 
 class ActorSearchAdapter(listener: ActorSearchInteractionListener)
     : BasePagingAdapter<MediaUIState>(ActorSearchComparator, listener){
-    override val layoutID: Int = R.layout.item_actor_search
+    override val layoutID: Int = R.layout.item_actor
 
     object ActorSearchComparator : DiffUtil.ItemCallback<MediaUIState>(){
         override fun areItemsTheSame(oldItem: MediaUIState, newItem: MediaUIState) =

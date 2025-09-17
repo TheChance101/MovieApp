@@ -26,22 +26,20 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:spanCount="1" />
 
-        <com.airbnb.lottie.LottieAnimationView
+        <!--loading-->
+        <include
             android:id="@+id/loading"
-            android:layout_width="172dp"
-            android:layout_height="172dp"
-            app:isVisible="@{viewModel.uiState.loading}"
+            layout="@layout/loading2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/loading_animation" />
+            app:isVisible="@{viewModel.uiState.loading}"
+            />
 
         <include
             android:id="@+id/error"
-            layout="@layout/error_movie_details"
+            layout="@layout/error2"
             app:isError="@{!viewModel.uiState.errorUIStates.isEmpty()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

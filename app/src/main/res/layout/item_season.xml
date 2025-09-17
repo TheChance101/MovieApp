@@ -12,115 +12,157 @@
         <variable
             name="item"
             type="com.karrar.movieapp.ui.tvShowDetails.tvShowUIState.SeasonUIState" />
+
+        <variable
+            name="episode"
+            type="com.karrar.movieapp.ui.tvShowDetails.episodes.EpisodeUIState" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="144dp"
-        android:layout_marginBottom="@dimen/spacing_medium"
-        android:paddingHorizontal="@dimen/spacing_medium"
-        tools:background="@color/background_color">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_medium"
+        android:layout_marginVertical="@dimen/spacing_extra_small">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_season"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginVertical="@dimen/spacing_small"
-            android:backgroundTint="@color/card_background_color"
             android:onClick="@{() -> listener.onClickSeason(item.seasonNumber)}"
+            app:cardBackgroundColor="@color/background_card"
             app:cardCornerRadius="@dimen/radius_medium"
             app:cardElevation="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/image_episode"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/image_episode" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/image_episode"
-            android:layout_width="0dp"
-            android:layout_height="144dp"
+            android:layout_width="48dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/spacing_extra_small"
+            android:layout_marginTop="@dimen/spacing_extra_small"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/text_season_description"
             app:layout_constraintDimensionRatio="1:1.6"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/card_season"
             app:layout_constraintTop_toTopOf="parent"
             app:mediaPoster="@{item.imageUrl}"
-            app:shapeAppearanceOverlay="@style/CardCorners.Medium"
+            app:shapeAppearanceOverlay="@style/ArchImageShape"
             tools:background="@color/yellow"
-            tools:src="@drawable/test_2" />
+            tools:src="@drawable/image" />
 
         <TextView
             android:id="@+id/text_episode_name"
-            style="@style/Regular.Medium"
+            style="@style/Typography.body_md_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_medium"
-            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_marginStart="@dimen/spacing_extra_small"
             android:ellipsize="end"
             android:text="@{item.seasonName}"
-            android:textColor="@color/shade_primary_color"
+            android:textColor="@color/shade_primary"
             app:layout_constraintStart_toEndOf="@+id/image_episode"
-            app:layout_constraintTop_toTopOf="@+id/card_season"
+            app:layout_constraintTop_toTopOf="@+id/image_episode"
             tools:text="Season 2" />
 
         <TextView
-            android:id="@+id/text_season_year"
-            style="@style/Regular.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_small"
-            android:text="@{item.seasonYear}"
-            android:textColor="@color/shade_ternary_color"
-            app:layout_constraintBottom_toBottomOf="@+id/text_episode_name"
-            app:layout_constraintStart_toEndOf="@+id/text_episode_name"
-            app:layout_constraintTop_toTopOf="@+id/text_episode_name"
-            tools:text="2019" />
-
-        <TextView
-            android:id="@+id/text_line"
-            style="@style/Regular.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_too_small"
-            android:text="|"
-            android:textColor="@color/shade_ternary_color"
-            app:layout_constraintBottom_toBottomOf="@+id/text_episode_name"
-            app:layout_constraintStart_toEndOf="@+id/text_season_year"
-            app:layout_constraintTop_toTopOf="@+id/text_episode_name"
-            tools:ignore="HardcodedText" />
-
-        <TextView
-            android:id="@+id/text_episodes_number"
-            style="@style/Regular.Small"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_too_small"
-            android:text="@{@string/total_episodes(String.valueOf(item.episodeCount))}"
-            android:textColor="@color/shade_ternary_color"
-            app:layout_constraintBottom_toBottomOf="@+id/text_episode_name"
-            app:layout_constraintEnd_toEndOf="@+id/card_season"
-            app:layout_constraintStart_toEndOf="@+id/text_line"
-            app:layout_constraintTop_toTopOf="@+id/text_episode_name"
-            tools:text="8 Episodes" />
-
-        <TextView
             android:id="@+id/text_season_description"
-            style="@style/Regular.Small"
+            style="@style/Typography.body_sm_regular"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/spacing_small"
-            android:layout_marginEnd="@dimen/spacing_medium"
-            android:gravity="center|start"
-            android:layout_marginBottom="@dimen/spacing_small"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_too_small"
             android:ellipsize="end"
+            android:gravity="center|start"
             android:lines="4"
-            app:overviewText="@{item.seasonDescription}"
-            android:textColor="@color/shade_primary_color"
-            app:layout_constraintBottom_toBottomOf="@+id/card_season"
+            app:layout_constraintBottom_toBottomOf="@id/image_episode"
             app:layout_constraintEnd_toEndOf="@+id/card_season"
             app:layout_constraintStart_toStartOf="@+id/text_episode_name"
             app:layout_constraintTop_toBottomOf="@+id/text_episode_name"
+            app:overviewText="@{item.seasonDescription}"
             tools:text="After tracking a potentially suspicious shipment of illegal arms in the Venezuelan jungle, CIA Officer Jack Ryan heads to South America..." />
+
+
+        <View
+            android:id="@+id/season_divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_margin="@dimen/spacing_extra_small"
+            android:background="@color/stroke_primary"
+            app:layout_constraintEnd_toEndOf="@id/card_season"
+            app:layout_constraintStart_toStartOf="@id/image_episode"
+            app:layout_constraintTop_toBottomOf="@id/image_episode" />
+
+        <LinearLayout
+            android:id="@+id/season_meta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/spacing_extra_small"
+            app:layout_constraintEnd_toEndOf="@id/card_season"
+            app:layout_constraintStart_toStartOf="@id/card_season"
+            app:layout_constraintTop_toBottomOf="@id/season_divider">
+
+            <!-- rating -->
+            <ImageView
+                android:contentDescription="@string/rating"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_star_duetone"
+                app:tint="@color/additional_primary_yellow" />
+
+            <TextView
+                style="@style/Typography.label_md_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_too_small"
+                android:text='@{String.format("%.1f", episode.episodeRate)}'
+                tools:text="7.5" />
+
+            <!-- spacer -->
+            <View
+                android:layout_width="@dimen/spacing_medium"
+                android:layout_height="0dp" />
+
+            <!-- episodes -->
+            <ImageView
+                android:contentDescription="@string/episodes"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_video_library_duetone"
+                app:tint="@color/shade_secondary_color" />
+
+            <TextView
+                style="@style/Typography.label_md_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_too_small"
+                android:text='@{@string/total_episodes(String.valueOf(item.episodeCount))}'
+                tools:text="20 Episodes" />
+
+            <!-- spacer -->
+            <View
+                android:layout_width="@dimen/spacing_medium"
+                android:layout_height="0dp" />
+
+            <!-- year -->
+            <ImageView
+                android:contentDescription="@string/released_date"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_calendar_duetone"
+                app:tint="@color/shade_secondary" />
+
+
+            <TextView
+                style="@style/Typography.label_md_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_too_small"
+                android:text='@{item.seasonYear}'
+                tools:text="2019" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

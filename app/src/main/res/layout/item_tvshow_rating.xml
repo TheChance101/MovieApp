@@ -11,37 +11,90 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rating_section"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/rate_the_movie"
-            style="@style/SemiBold.Medium"
+            android:id="@+id/rating_id"
+            style="@style/Typography.title_md"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_medium"
-            android:layout_marginTop="@dimen/spacing_medium"
-            android:text="@string/rate_the_movie"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:text="@string/did_you_watch_it"
+            android:textColor="@color/shade_primary_color"
+            android:textFontWeight="500"
+            android:textSize="16sp"
             app:isVisible="@{viewModel.stateFlow.login}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <RatingBar
-            android:id="@+id/rating_bar"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/give_it_stars_container"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_medium"
-            android:layout_marginTop="@dimen/spacing_medium"
-            android:isIndicator="false"
-            android:onRatingChanged="@{(ratingBar, rating, fromUser) -> viewModel.onChangeRating(rating)}"
-            android:progressDrawable="@drawable/rating_custom"
-            android:rating="@{viewModel.stateFlow.ratingValue}"
-            app:isVisible="@{viewModel.stateFlow.login}"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/card_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rate_the_movie" />
+            app:layout_constraintTop_toBottomOf="@id/rating_id">
 
+            <ImageView
+                android:id="@+id/star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/imge_circle_shape"
+                android:contentDescription="@string/star_circlr_shape"
+                android:padding="12dp"
+                android:src="@drawable/due_tone_star"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/brand_primary" />
 
+            <TextView
+                android:id="@+id/give_it_stars_text"
+                style="@style/Typography.title_md"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="@string/give_it_stars"
+                android:textColor="@color/shade_primary_color"
+                android:textFontWeight="500"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@id/star"
+                app:layout_constraintTop_toTopOf="@id/star" />
+
+            <TextView
+                android:id="@+id/subtitle"
+                style="@style/Typography.body_md_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/let_the_world_lnow_how_you_felt"
+                android:textColor="@color/shade_secondary_color"
+                android:textFontWeight="500"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/star"
+                app:layout_constraintStart_toStartOf="@id/give_it_stars_text"
+                app:layout_constraintTop_toBottomOf="@id/give_it_stars_text" />
+
+            <ImageView
+                android:id="@+id/arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/arrow"
+                android:src="@drawable/outline_alt_arrow_right"
+                app:layout_constraintBottom_toBottomOf="@id/star"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/star"
+                app:tint="@color/shade_tertiary" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

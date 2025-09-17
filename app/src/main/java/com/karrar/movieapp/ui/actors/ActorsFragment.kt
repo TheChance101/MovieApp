@@ -20,7 +20,10 @@ import dagger.hilt.android.AndroidEntryPoint
 class ActorsFragment : BaseFragment<FragmentActorsBinding>() {
     override val layoutIdFragment = R.layout.fragment_actors
     override val viewModel: ActorsViewModel by viewModels()
-    private val actorsAdapter by lazy { ActorsAdapter(viewModel) }
+    private val actorsAdapter by lazy { ActorsAdapter(
+        viewModel,
+        layoutID = R.layout.item_actor
+    ) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

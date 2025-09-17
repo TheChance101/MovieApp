@@ -67,6 +67,10 @@ class ProfileViewModel @Inject constructor(
         _profileUIEvent.update { Event(ProfileUIEvent.RatedMoviesEvent) }
     }
 
+    fun onClickMyCollection() {
+        _profileUIEvent.update { Event(ProfileUIEvent.MyCollectionEvent) }
+    }
+
     fun onClickLogout() {
         _profileUIEvent.update { Event(ProfileUIEvent.DialogLogoutEvent) }
     }

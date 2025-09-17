@@ -7,9 +7,9 @@ sealed class DetailItemUIState(val priority: Int) {
 
     class Header(val data: TvShowDetailsResultUIState) : DetailItemUIState(0)
 
-    class Cast(val data: List<ActorUiState>) : DetailItemUIState(1)
+    class Cast(val data: List<ActorUiState>) : DetailItemUIState(2)
 
-    class Seasons(val data: List<SeasonUIState>) : DetailItemUIState(2)
+    class Seasons(val data: List<SeasonUIState>) : DetailItemUIState(1)
 
     class Rating(val viewModel: ViewModel) : DetailItemUIState(3)
 
@@ -17,5 +17,5 @@ sealed class DetailItemUIState(val priority: Int) {
 
     class Comment(val data: ReviewUIState) : DetailItemUIState(5)
 
-    object SeeAllReviewsButton : DetailItemUIState(6)
+//    object SeeAllReviewsButton : DetailItemUIState(6)
 }

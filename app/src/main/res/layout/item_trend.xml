@@ -15,17 +15,85 @@
 
     </data>
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/image_trend"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="234dp"
-        app:layout_constraintDimensionRatio="1:1.4"
-        android:scaleType="centerCrop"
-        app:shapeAppearanceOverlay="@style/CardCorners.Medium"
-        tools:src="@drawable/trend"
-        app:posterImage="@{item.mediaImage}"
+        android:layout_height="wrap_content"
         android:onClick="@{() -> listener.onClickTrend(item)}"
-        android:layout_marginHorizontal="@dimen/spacing_small"
-        android:layout_marginVertical="@dimen/spacing_small"
-        />
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:gravity="center"
+            >
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image_movie"
+                android:layout_width="match_parent"
+                android:layout_height="208dp"
+                android:scaleType="centerCrop"
+                app:posterImage="@{item.mediaImage}"
+                app:shapeAppearanceOverlay="@style/PosterShape"
+                tools:src="@drawable/test" />
+
+            <TextView
+                android:id="@+id/text_title_movie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Typography.body_md_medium"
+                android:text="TODO"
+                android:textColor="@color/shade_secondary"
+                tools:text="Title"
+                android:layout_marginTop="8dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/rating_container"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Typography.label_md_medium"
+                android:text="TODO"
+                tools:text="7.5"
+                android:layout_marginStart="8dp"
+                android:layout_gravity="center_vertical"
+                />
+
+            <ImageView
+                android:contentDescription="@string/rated_movies"
+                android:src="@drawable/ic_star_duetone"
+                app:tint="@color/additional_primary_yellow"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginVertical="4dp"
+                android:layout_marginEnd="6dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="4dp"
+                />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="rating"
+            type="String" />
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="categories"
+            type="String" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="time"
+            type="String" />
+
+        <variable
+            name="date"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:background="@drawable/horizontal_poster_background">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="64dp"
+            android:layout_height="88dp"
+            app:cardPreventCornerOverlap="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.CustomRounded">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                app:horizontalPosterImageUrl="@{imageUrl}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:src="@drawable/flash_placeholder"
+                android:scaleType="centerCrop" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_star_duetone"
+            app:tint="@color/additional_primary_yellow" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="4dp"
+            android:text="@{rating}"
+            style="@style/Typography.label_md_medium"
+            android:textColor="@color/shade_primary"
+            tools:text="8.7"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+            app:layout_constraintEnd_toStartOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="12dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView2"
+            app:layout_constraintStart_toEndOf="@+id/materialCardView"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/Typography.body_md_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{title}"
+                android:textColor="@color/shade_primary"
+                tools:text="The Flash" />
+
+            <TextView
+                style="@style/Typography.body_md_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:maxLines="1"
+                android:text="@{categories}"
+                tools:text="Sci-Fi · Action · Thriller"
+                android:textColor="@color/shade_secondary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginEnd="4dp"
+                    android:padding="1dp"
+                    android:src="@drawable/ic_clock_duetone"
+                    app:tint="@color/shade_secondary" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    style="@style/Typography.label_md_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@{time}"
+                    tools:text="2h 32m"
+                    android:layout_marginEnd="8dp"
+                    android:textColor="@color/shade_secondary" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/ic_calendar_duetone"
+                    app:tint="@color/shade_secondary" />
+
+                <TextView
+                    style="@style/Typography.label_md_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@{date}"
+                    tools:text="2008, Jul 18"
+                    android:textColor="@color/shade_secondary" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

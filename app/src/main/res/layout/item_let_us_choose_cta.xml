@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.karrar.movieapp.ui.home.HomeInteractionListener" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        >
+
+        <TextView
+            android:id="@+id/cta_header"
+            style="@style/Typography.title_sm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/what_should_i_watch"
+            android:textColor="@color/shade_primary" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/ctaCard"
+            android:layout_marginTop="12dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="@{() -> listener.onClickLetUsChooseForYou()}">
+
+            <FrameLayout
+                android:id="@+id/icon_container"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:background="@drawable/back_icon_cta"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_magic_stick_duetone"
+                    app:tint="@color/brand_primary"
+                    />
+
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_arrow_right"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/shade_tertiary" />
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                app:layout_constraintStart_toEndOf="@id/icon_container"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/title_text"
+                    style="@style/Typography.title_lg"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_too_small"
+                    android:text="Let Us Choose For You!"
+                    app:layout_constraintBottom_toTopOf="@+id/description_text"
+                    app:layout_constraintStart_toEndOf="@+id/icon_container"
+                    app:layout_constraintTop_toTopOf="@+id/icon_container" />
+
+                <TextView
+                    android:id="@+id/description_text"
+                    style="@style/Typography.body_md_medium"
+                    android:textColor="@color/shade_secondary"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="We’ll help you skip the scroll and go straight to the good stuff."
+                    app:layout_constraintBottom_toBottomOf="@+id/icon_container"
+                    app:layout_constraintStart_toStartOf="@+id/title_text"
+                    app:layout_constraintTop_toBottomOf="@+id/title_text" />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</layout>

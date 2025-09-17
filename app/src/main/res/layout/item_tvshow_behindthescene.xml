@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/spacing_medium"
+    android:layout_marginVertical="@dimen/spacing_large">
+
+    <TextView
+        android:id="@+id/tv_behindthescenes"
+        style="@style/Typography.title_sm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Behind The Scenes"
+        android:textColor="@color/shade_primary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_show_more"
+        style="@style/Typography.body_md_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_more"
+        android:textColor="@color/brand_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_behindthescene"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:background="@drawable/card_bg"
+        android:paddingHorizontal="18dp"
+        android:paddingVertical="@dimen/spacing_small"
+        app:layout_constraintTop_toBottomOf="@id/tv_behindthescenes">
+
+        <TextView
+            android:id="@+id/tv_characters"
+            style="@style/Typography.body_md_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/spacing_medium"
+            android:text="@string/characters"
+            android:textColor="@color/shade_secondary"
+            app:layout_constraintBottom_toTopOf="@id/line_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_characters_name"
+            style="@style/Typography.body_md_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/spacing_medium"
+            android:text="Bob Kane"
+            android:textColor="@color/shade_secondary"
+            app:layout_constraintBottom_toTopOf="@id/line_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/line_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:background="@color/shade_quaternary"
+            app:layout_constraintTop_toBottomOf="@id/tv_characters" />
+
+        <TextView
+            android:id="@+id/tv_director"
+            style="@style/Typography.body_md_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/spacing_medium"
+            android:text="Director, Screenplay,\nStory"
+            android:textColor="@color/shade_secondary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_1" />
+
+        <TextView
+            android:id="@+id/tv_director_name"
+            style="@style/Typography.body_md_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/spacing_medium"
+            android:text="Christopher Nolan"
+            android:textColor="@color/shade_secondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_1" />
+
+        <View
+            android:id="@+id/line_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:background="@color/shade_quaternary"
+            app:layout_constraintTop_toBottomOf="@id/tv_director" />
+
+        <TextView
+            android:id="@+id/tv_screenplay"
+            style="@style/Typography.body_md_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/spacing_medium"
+            android:text="Screenplay"
+            android:textColor="@color/shade_secondary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_2" />
+
+        <TextView
+            android:id="@+id/tv_screenplay_name"
+            style="@style/Typography.body_md_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/spacing_medium"
+            android:text="Jonathan Nolan"
+            android:textColor="@color/shade_secondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_2" />
+
+        <View
+            android:id="@+id/line_3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:background="@color/shade_quaternary"
+            app:layout_constraintTop_toBottomOf="@id/tv_screenplay" />
+
+
+        <TextView
+            android:id="@+id/tv_story"
+            style="@style/Typography.body_md_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/spacing_medium"
+            android:text="Story"
+            android:textColor="@color/shade_secondary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_3" />
+
+        <TextView
+            android:id="@+id/tv_story_name"
+            style="@style/Typography.body_md_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/spacing_medium"
+            android:text="David S. Goyer"
+            android:textColor="@color/shade_secondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

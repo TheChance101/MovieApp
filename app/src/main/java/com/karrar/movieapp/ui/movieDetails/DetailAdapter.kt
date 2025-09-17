@@ -5,7 +5,10 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.karrar.movieapp.BR
 import com.karrar.movieapp.R
-import com.karrar.movieapp.ui.adapters.*
+import com.karrar.movieapp.ui.adapters.ActorAdapter
+import com.karrar.movieapp.ui.adapters.ActorsInteractionListener
+import com.karrar.movieapp.ui.adapters.MovieAdapter
+import com.karrar.movieapp.ui.adapters.MovieInteractionListener
 import com.karrar.movieapp.ui.base.BaseAdapter
 import com.karrar.movieapp.ui.base.BaseInteractionListener
 import com.karrar.movieapp.ui.movieDetails.movieDetailsUIState.DetailItemUIState
@@ -36,6 +39,7 @@ class DetailAdapter(
                     setVariable(BR.listener, listener as DetailInteractionListener)
                 }
             }
+
             is DetailItemUIState.Cast -> {
                 holder.binding.run {
                     setVariable(
@@ -48,6 +52,7 @@ class DetailAdapter(
                     )
                 }
             }
+
             is DetailItemUIState.SimilarMovies -> {
                 holder.binding.run {
                     setVariable(
@@ -56,23 +61,23 @@ class DetailAdapter(
                     )
                 }
             }
+
             is DetailItemUIState.Rating -> {
                 holder.binding.run {
                     setVariable(BR.viewModel, currentItem.viewModel)
                 }
             }
+
             is DetailItemUIState.Comment -> {
                 holder.binding.run {
                     setVariable(BR.item, currentItem.data)
                     setVariable(BR.listener, listener)
                 }
             }
-            is DetailItemUIState.ReviewText -> {}
-            DetailItemUIState.SeeAllReviewsButton -> {
-                holder.binding.run {
-                    setVariable(BR.listener, listener as DetailInteractionListener)
-                }
-            }
+
+            is DetailItemUIState.BehindTheScenesText -> {}
+            DetailItemUIState.ReviewText -> {}
+
         }
     }
 
@@ -92,11 +97,11 @@ class DetailAdapter(
             is DetailItemUIState.SimilarMovies -> R.layout.list_similar_movie
             is DetailItemUIState.Rating -> R.layout.item_rating
             is DetailItemUIState.Comment -> R.layout.item_movie_review
-            is DetailItemUIState.ReviewText -> R.layout.item_review_text
-            DetailItemUIState.SeeAllReviewsButton -> R.layout.item_see_all_reviews
+            is DetailItemUIState.BehindTheScenesText -> R.layout.item_movie_behindthescene
+            DetailItemUIState.ReviewText -> R.layout.item_review_text
+
         }
     }
-
 }
 
 

@@ -18,6 +18,6 @@ sealed class DetailItemUIState(val priority: Int) {
 
     object ReviewText : DetailItemUIState(5)
 
-    object SeeAllReviewsButton : DetailItemUIState(7)
+    object BehindTheScenesText : DetailItemUIState(3)
 
 }

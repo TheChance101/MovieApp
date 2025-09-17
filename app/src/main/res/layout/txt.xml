@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white_primary"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <!-- Info Section -->
+        <LinearLayout
+            android:id="@+id/info_section"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginEnd="16dp"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/info_section_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/info_section"
+                tools:text="Info Section"
+                android:textColor="@color/shade_primary"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/info_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                tools:text="• Description"
+                android:textColor="@color/shade_secondary"
+                android:fontFamily="sans-serif"
+                android:textSize="16sp"
+                android:lineSpacingMultiplier="1.0" />
+
+        </LinearLayout>
+
+        <!-- Title Section -->
+        <LinearLayout
+            android:id="@+id/title_section"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:baselineAligned="false"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/title_on_air"
+                android:textColor="@color/shade_primary"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/caption_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:lineSpacingMultiplier="1.0"
+                android:text="@string/description"
+                android:textColor="@color/shade_secondary"
+                android:textSize="16sp"
+                tools:text="Description" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

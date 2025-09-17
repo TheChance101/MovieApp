@@ -7,7 +7,7 @@ enum class AllMediaType {
     POPULAR,
     TOP_RATED,
     TRENDING,
-    NOW_STREAMING,
+    RECENTLY_RELEASED,
     UPCOMING,
     MYSTERY,
     ADVENTURE,

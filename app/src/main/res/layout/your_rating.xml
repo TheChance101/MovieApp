@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/you_gave_it_text"
+            style="@style/Typography.body_sm_medium"
+            android:textColor="@color/shade_primary"
+            android:text="@string/you_gave_it"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="8dp"
+            />
+
+        <com.karrar.movieapp.ui.components.ratingBar.StarRatingView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:rating="4.5" />
+    </LinearLayout>
+
+</layout>

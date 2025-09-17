@@ -14,87 +14,137 @@
             type="com.karrar.movieapp.ui.profile.watchhistory.WatchHistoryInteractionListener" />
     </data>
 
-    <androidx.cardview.widget.CardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/spacing_medium"
-        android:layout_marginTop="@dimen/spacing_medium"
+        android:background="@drawable/cast_card"
+        android:layout_marginVertical="16dp"
+        android:layout_marginHorizontal="16dp"
         android:onClick="@{() -> listener.onClickMovie(item)}"
-        app:cardCornerRadius="@dimen/radius_small"
-        app:cardElevation="0dp">
+        >
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="@color/card_background_color">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_movie"
+            android:layout_width="64dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:background="@color/gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:mediaPoster="@{item.posterPath}"
+            app:shapeAppearanceOverlay="@style/cast_image"
+            tools:srcCompat="@drawable/image"
+            />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/image_movie"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:scaleType="centerCrop"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="3.5:2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:mediaPoster="@{item.posterPath}"
-                app:shapeAppearanceOverlay="@style/CardCorners.Small"
-                tools:src="@drawable/test" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/image_movie"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginVertical="12.5dp"
+            >
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/text_title_movie"
-                style="@style/Regular.Small"
-                android:layout_width="0dp"
+                style="@style/Typography.body_md_medium"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/spacing_medium"
-                android:layout_marginVertical="@dimen/spacing_small"
                 android:ellipsize="end"
-                android:lines="2"
+                android:lines="1"
                 android:text="@{item.movieTitle}"
-                app:layout_constraintEnd_toStartOf="@+id/text_duration"
-                app:layout_constraintStart_toEndOf="@id/image_movie"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="The Mandalorian" />
-
+                android:textColor="@color/shade_primary"
+                tools:text="Title" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/text_rate_movie"
-                style="@style/SemiBold.Small"
+                android:id="@+id/text_genres"
+                style="@style/Typography.body_sm_regular"
+                android:layout_marginTop="4dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/spacing_medium"
-                android:layout_marginBottom="@dimen/spacing_small"
-                android:drawableStart="@drawable/ic_star_small"
-                android:drawablePadding="@dimen/spacing_too_small"
-                android:text="@{item.voteAverage}"
-                android:textColor="@color/yellow"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/image_movie"
-                tools:text="8.4" />
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="TODO"
+                android:textColor="@color/shade_secondary"
+                tools:text="Drama, Action, Crime, Thriller" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/text_year"
-                style="@style/Regular.Small.ternary"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="@dimen/spacing_small"
-                android:text="@{item.releaseDate}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:text="2022" />
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                >
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/text_duration"
-                style="@style/Regular.Small.ternary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/spacing_medium"
-                app:convertToHoursPattern="@{item.movieDuration}"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/text_title_movie"
-                tools:text="1h 50m" />
+                <ImageView
+                    android:src="@drawable/ic_clock_duetone"
+                    app:tint="@color/shade_secondary"
+                    android:contentDescription="@string/duration"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="4dp"
+                    />
+                <TextView
+                    android:id="@+id/text_duration"
+                    style="@style/Typography.label_md_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:convertToHoursPattern="@{item.movieDuration}"
+                    tools:text="2h 32m"
+                    android:layout_marginEnd="8dp"
+                    />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:src="@drawable/ic_calendar_duetone"
+                    android:contentDescription="@string/released_date"
+                    app:tint="@color/shade_secondary"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="4dp"
+                    />
+                <TextView
+                    android:id="@+id/text_year"
+                    style="@style/Typography.label_md_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{item.releaseDate}"
+                    tools:text="2008, Jul 18"
+                    android:layout_marginEnd="8dp"
+                    />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_rate_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{item.voteAverage}"
+            style="@style/Typography.label_md_medium"
+            tools:text="7.5"
+            app:layout_constraintTop_toTopOf="@id/icon_rate_movie"
+            app:layout_constraintEnd_toStartOf="@id/icon_rate_movie"
+            app:layout_constraintBottom_toBottomOf="@id/icon_rate_movie"
+            android:layout_marginEnd="4dp"
+            />
+        <ImageView
+            android:id="@+id/icon_rate_movie"
+            android:src="@drawable/ic_star_duetone"
+            app:tint="@color/additional_primary_yellow"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:contentDescription="@string/rated_movies"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

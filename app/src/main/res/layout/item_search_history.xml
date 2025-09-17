@@ -14,18 +14,36 @@
 
     </data>
 
-    <TextView
-        android:id="@+id/text_search_history"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_too_small"
-        android:layout_marginBottom="@dimen/spacing_too_small"
-        tools:text="Star Wars"
-        android:text="@{item.name}"
-        style="@style/Regular.Medium"
-        android:textColor="@color/shade_secondary_color"
-        android:drawablePadding="6dp"
-        app:drawableEndCompat="@drawable/ic_arrow_up_left"
-        android:onClick="@{() -> listener.onClickSearchHistory(item.name)}"/>
+        android:orientation="vertical"
+        android:layout_marginHorizontal="16dp"
+
+        >
+        <TextView
+            android:id="@+id/text_search_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14.5dp"
+            android:layout_marginBottom="14.5dp"
+            tools:text="Star Wars"
+            android:text="@{item.name}"
+            style="@style/Typography.body_md_medium"
+            android:textColor="@color/shade_secondary"
+            android:drawablePadding="6dp"
+            app:drawableStartCompat="@drawable/ic_history"
+            app:drawableTint="@color/shade_tertiary"
+            app:drawableEndCompat="@drawable/ic_arrow_up_left"
+            android:onClick="@{() -> listener.onClickSearchHistory(item.name)}"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/shade_quaternary"
+            />
+
+    </LinearLayout>
+
 
 </layout>

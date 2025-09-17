@@ -3,14 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-    </data>
+    <data></data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background_color"
+        android:background="@color/background_screen"
         android:fitsSystemWindows="true"
         tools:context="ui.main.MainActivity">
 
@@ -20,25 +18,171 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:defaultNavHost="true"
-            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+            app:layout_constraintBottom_toTopOf="@+id/custom_bottom_navigation"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:navGraph="@navigation/movie_navigation" />
 
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            android:layout_width="0dp"
+        <!-- Custom Bottom Navigation -->
+        <LinearLayout
+            android:id="@+id/custom_bottom_navigation"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/background_color"
-            app:itemIconSize="20dp"
-            app:itemIconTint="@color/bottom_navigation_selector"
-            app:itemTextColor="@color/bottom_navigation_selector"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/bottom_nav" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="vertical"
+            >
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/stroke_primary"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background_card"
+                android:elevation="8dp"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <!-- Home Tab -->
+                <LinearLayout
+                    android:id="@+id/nav_home"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/icon_home"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="Home"
+                        android:src="@drawable/ic_home"
+                        app:tint="@color/shade_tertiary" />
+
+                    <TextView
+                        android:id="@+id/label_home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Home"
+                        android:textColor="@color/shade_tertiary"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <!-- Explore Tab -->
+                <LinearLayout
+                    android:id="@+id/nav_explore"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/icon_explore"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="Explore"
+                        android:src="@drawable/ic_search"
+                        app:tint="@color/shade_tertiary" />
+
+                    <TextView
+                        android:id="@+id/label_explore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Explore"
+                        android:textColor="@color/shade_tertiary"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <!-- Match Tab -->
+                <LinearLayout
+                    android:id="@+id/nav_match"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/icon_match"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="Match"
+                        android:src="@drawable/ic_magic_stick"
+                        app:tint="@color/shade_tertiary" />
+
+                    <TextView
+                        android:id="@+id/label_match"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Match"
+                        android:textColor="@color/shade_tertiary"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <!-- Me Tab -->
+                <LinearLayout
+                    android:id="@+id/nav_me"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/icon_me"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="Me"
+                        android:src="@drawable/ic_user_square"
+                        app:tint="@color/shade_tertiary" />
+
+                    <TextView
+                        android:id="@+id/label_me"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Me"
+                        android:textColor="@color/shade_tertiary"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
